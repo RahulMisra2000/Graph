@@ -69,7 +69,7 @@ public class Graph
 		
 		System.out.println("Following is Breadth First Traversal of DIRECTED Graph "+ "(starting from vertex 2)"); 
 
-		g.BFS(0); 
+		g.BFS(0);  
 	} 
 } 
 

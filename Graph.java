@@ -1,13 +1,3 @@
-//*******************************************************************
-// Welcome to CompileJava!
-// If you experience any issues, please contact us ('More Info')  -->
-//*******************************************************************
-
-
-
-// IMAGE : https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/
-
-
 import java.lang.Math; // headers MUST be above the first class
 import java.io.*; 
 import java.util.*; 
@@ -16,7 +6,7 @@ import java.util.*;
 public class Graph 
 { 
 	private int V;                          // No. of vertices 
-	private LinkedList<Integer>[] adj;      // ** Adjacency Lists  **
+	private LinkedList<Integer>[] adj;      // ** Implementing Graph as Adjacency Lists  ***************************************
 
 	Graph(int v) 
 	{ 
@@ -26,7 +16,6 @@ public class Graph
 			adj[i] = new LinkedList<Integer>(); 
 	} 
 
-	// Function to add an edge into the graph 
 	void addEdge(int v,int w) 
 	{ 
 		adj[v].add(w); 
@@ -51,15 +40,13 @@ public class Graph
 			s = queue.poll(); 
 			System.out.print(s+" "); 
 
-			// Get all adjacent vertices of the dequeued vertex s 
-			// If a adjacent has not been visited, then mark it 
-			// visited and enqueue it 
+			// Get all adjacent vertices of the dequeued vertex s. 
 			Iterator<Integer> i = adj[s].listIterator(); 
 			while (i.hasNext()) 
 			{ 
 				int n = i.next(); 
-				if (!visited[n]) 
-				{ 
+				if (!visited[n]) 		
+				{ 				// If not visited then mark it visited and add it to queue
 					visited[n] = true; 
 					queue.add(n); 
 				} 
@@ -71,9 +58,9 @@ public class Graph
 	public static void main(String args[]) 
 	{ 
 	    Integer numOfVertices = 4;
-		Graph g = new Graph(numOfVertices+1);   // ** DIRECTED ** Graph
+		Graph g = new Graph(numOfVertices+1);   // ********** DIRECTED *************** Graph
 
-		g.addEdge(0, 3); 
+		g.addEdge(0, 3); 			// vertex 0 points to vertex 3      0 ----> 3
 		g.addEdge(0, 4); 
 		g.addEdge(0, 1); 
 		g.addEdge(2, 4); 
